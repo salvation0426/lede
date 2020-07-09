@@ -55,6 +55,7 @@ jobs:
 
       - name: Update feeds
         run: |
+          sed -i -E 's/#(src-git.+)(helloworld.+)/\1\2/' feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
